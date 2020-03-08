@@ -1,7 +1,5 @@
 import 'dart:math';
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'text_styles.dart';
@@ -97,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.white10,
                       splashColor: Colors.yellow.shade700,
                       onPressed: () {
-                        return null;
+                        gender = 1;
                       },
                     ),
                     RaisedButton(
@@ -128,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.white10,
                       splashColor: Colors.yellow.shade700,
                       onPressed: () {
-                        return null;
+                        gender = 2;
                       },
                     ),
                   ],
@@ -390,8 +388,8 @@ class ResultPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          height: window.physicalSize.height / 4.5,
-          width: window.physicalSize.width / 4,
+          height: MediaQuery.of(context).size.height * 0.6,
+          width: MediaQuery.of(context).size.width * 0.7,
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
