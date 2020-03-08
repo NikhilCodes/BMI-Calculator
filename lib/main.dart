@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   double heightScale2 = 0.25;
 
-  double widthScale3 = 0.4;
+  double widthScale3 = 0.425;
   double heightScale3 = 0.2;
 
   @override
