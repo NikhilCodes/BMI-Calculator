@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'text_styles.dart';
 
@@ -36,26 +37,27 @@ class _MyHomePageState extends State<MyHomePage> {
   var age = 19;
 
   // Constants
-  double widthScale1 = 0.32;
-  double heightScale1 = 0.2;
+  double widthScale1 = 0.3;
+  double heightScale1 = 0.20;
 
-  double heightScale2 = 0.25;
+  double heightScale2 = 0.24;
 
   double widthScale3 = 0.425;
-  double heightScale3 = 0.2;
+  double heightScale3 = 0.24;
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.black87,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(20),
-            height: MediaQuery.of(context).size.height * 0.92,
+            padding: EdgeInsets.fromLTRB(20, 10, 20, 2),
+            height: MediaQuery.of(context).size.height * 0.91,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
                   padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
@@ -74,12 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       child: Container(
                         width: MediaQuery.of(context).size.width * widthScale1,
-                        height: MediaQuery.of(context).size.height * heightScale1,
+                        height:
+                            MediaQuery.of(context).size.height * heightScale1,
                         child: Column(
                           children: <Widget>[
                             Image.asset(
                               "images/man.png",
-                              scale: 5.5,
+                              scale: 7,
                             ),
                             Container(
                               height: 20,
@@ -105,12 +108,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       child: Container(
                         width: MediaQuery.of(context).size.width * widthScale1,
-                        height: MediaQuery.of(context).size.height * heightScale1,
+                        height:
+                            MediaQuery.of(context).size.height * heightScale1,
                         child: Column(
                           children: <Widget>[
                             Image.asset(
                               "images/woman.png",
-                              scale: 5.5,
+                              scale: 7,
                             ),
                             Container(
                               height: 20,
@@ -357,10 +361,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ResultPage(
-                            bmi: bmiValue,
-                            status: status,
-                          )),
+                    builder: (context) => ResultPage(
+                      bmi: bmiValue,
+                      status: status,
+                    ),
+                  ),
                 );
               },
             ),
@@ -417,8 +422,14 @@ class ResultPage extends StatelessWidget {
               Container(
                 child: Column(
                   children: <Widget>[
-                    Text("Normal BMI range:", style: noteTextStyle1,),
-                    Text("18.5 - 25 kg/m²", style: noteTextStyle2,),
+                    Text(
+                      "Normal BMI range:",
+                      style: noteTextStyle1,
+                    ),
+                    Text(
+                      "18.5 - 25 kg/m²",
+                      style: noteTextStyle2,
+                    ),
                   ],
                 ),
               )
